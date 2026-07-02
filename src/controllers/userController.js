@@ -1,7 +1,6 @@
 const bcrypt = require('bcrypt');
 const pool = require('../config/db');
 
-// GET /usuarios
 async function listarUsuarios(req, res) {
   try {
     const [rows] = await pool.query(
@@ -13,7 +12,6 @@ async function listarUsuarios(req, res) {
   }
 }
 
-// GET /usuarios/:id
 async function buscarUsuario(req, res) {
   try {
     const { id } = req.params;
@@ -32,7 +30,6 @@ async function buscarUsuario(req, res) {
   }
 }
 
-// POST /usuarios
 async function criarUsuario(req, res) {
   try {
     const { usuario, senha, tipo } = req.body;
@@ -64,7 +61,6 @@ async function criarUsuario(req, res) {
   }
 }
 
-// PUT /usuarios/:id
 async function atualizarUsuario(req, res) {
   try {
     const { id } = req.params;
@@ -105,7 +101,6 @@ async function atualizarUsuario(req, res) {
   }
 }
 
-// DELETE /usuarios/:id
 async function deletarUsuario(req, res) {
   try {
     const { id } = req.params;
@@ -121,7 +116,6 @@ async function deletarUsuario(req, res) {
   }
 }
 
-// POST /login
 async function login(req, res) {
   try {
     const { usuario, senha } = req.body;
